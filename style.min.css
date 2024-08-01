@@ -474,7 +474,7 @@ ul li *{
     color: #2c2d2c;
 }
 
-ul li a:hover{
+.menu li a:hover{
     text-decoration: underline !important;
 }
 
