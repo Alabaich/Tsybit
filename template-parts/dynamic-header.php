@@ -45,7 +45,7 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
 		</li>
 	</ul>
 </header>
-<header id="site-header" class="site-header dynamic-header <?php echo esc_attr( $header_class ); ?>">
+<!-- <header id="site-header" class="site-header dynamic-header <?php echo esc_attr( $header_class ); ?>">
 	
 	<div class="header-inner">
 		<div class="site-branding show-<?php echo esc_attr( hello_elementor_get_setting( 'hello_header_logo_type' ) ); ?>">
@@ -93,4 +93,4 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
 			</nav>
 		<?php endif; ?>
 	</div>
-</header>
+</header> -->
