@@ -27,7 +27,7 @@ $menu_args = [
 $header_nav_menu = wp_nav_menu( $menu_args );
 $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separate call to avoid duplicate ID attributes.
 ?>
-<header>
+<header class="pageWidth">
 	<?php the_custom_logo(); ?>
 	<nav class="site-navigation <?php echo esc_attr( hello_show_or_hide( 'hello_header_menu_display' ) ); ?>" aria-label="<?php echo esc_attr__( 'Main menu', 'hello-elementor' ); ?>">
 				<?php
