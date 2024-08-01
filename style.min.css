@@ -475,7 +475,7 @@ ul li *{
 }
 
 ul li a:hover{
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 header{
