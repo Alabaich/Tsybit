@@ -92,10 +92,9 @@ $instagram_url = get_theme_mod('instagram_url', '');
 </a>
 <?php endif; ?>
             </div>
-			</div>
 			<ul class="Terms">
-				<li><a href="">terms</a></li>
-				<li><a href="">terms</a></li>
+				<li><a href="">Terms</a></li>
+				<li><a href="">Privacy</a></li>
 				<li><a href="">terms</a></li>
 			</ul>
 		</div>
