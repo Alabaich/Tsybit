@@ -532,6 +532,7 @@ align-items: center;
 gap: 10px;
 position: absolute;
 left: 50%;
+top: -14px;
 transform: translateX(-50%); /* Centers the button horizontally */
 bottom: 20px; /* Adjust as needed for vertical position */
 cursor: pointer;
