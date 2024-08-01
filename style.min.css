@@ -470,7 +470,9 @@ ul {
 
 
 
-
+ul li *{
+    color: #2c2d2c;
+}
 
 header{
     display: flex;
