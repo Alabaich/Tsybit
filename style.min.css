@@ -474,6 +474,10 @@ ul li *{
     color: #2c2d2c;
 }
 
+ul li a:hover{
+    text-decoration: underline;
+}
+
 header{
     display: flex;
     justify-content: space-between;
