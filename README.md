@@ -1,0 +1,2 @@
+# Tsybit
+Custom Wordpress Theme
