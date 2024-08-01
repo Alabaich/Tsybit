@@ -20,7 +20,40 @@ $footer_nav_menu = wp_nav_menu( [
 	'echo' => false,
 ] );
 ?>
-<footer id="site-footer" class="site-footer dynamic-footer <?php echo esc_attr( $footer_class ); ?>">
+<footer class="pageWidth">
+	<div class="innerFooter">
+		<div class="newsletter">
+			<p>
+			Subscribe to our Newsletter and save 10% on services
+			</p>
+			<div class="newsletterForm"> </div>
+		</div>
+		<div class="logoAndMenu">
+			<?php the_custom_logo(); ?>
+			<nav class="site-navigation <?php echo esc_attr( hello_show_or_hide( 'hello_footer_menu_display' ) ); ?>" aria-label="<?php echo esc_attr__( 'Footer menu', 'hello-elementor' ); ?>">
+				<?php
+				// PHPCS - escaped by WordPress with "wp_nav_menu"
+				echo $footer_nav_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				?>
+			</nav>
+		</div>
+		<div class="rightSocialNetworksTerms">
+			<p>© 2024 Tsybit.</p>
+			<ul class="socNetworks">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<ul class="Terms">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<!-- <footer id="site-footer" class="site-footer dynamic-footer <?php echo esc_attr( $footer_class ); ?>">
 	<div class="footer-inner">
 		<div class="site-branding show-<?php echo esc_attr( hello_elementor_get_setting( 'hello_footer_logo_type' ) ); ?>">
 			<?php if ( has_custom_logo() && ( 'title' !== hello_elementor_get_setting( 'hello_footer_logo_type' ) || $is_editor ) ) : ?>
@@ -59,4 +92,4 @@ $footer_nav_menu = wp_nav_menu( [
 			</div>
 		<?php endif; ?>
 	</div>
-</footer>
+</footer> -->
