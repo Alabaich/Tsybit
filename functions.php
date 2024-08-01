@@ -263,3 +263,93 @@ if ( ! function_exists( 'hello_elementor_body_open' ) ) {
 		wp_body_open();
 	}
 }
+
+
+function my_theme_customize_register( $wp_customize ) {
+    // Add Section for Contact Information
+    $wp_customize->add_section( 'contact_info_section', array(
+        'title'    => __( 'Contact Information', 'my_theme' ),
+        'priority' => 30,
+    ) );
+
+    // Add Setting for Phone Number
+    $wp_customize->add_setting( 'phone_number', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    // Add Control for Phone Number
+    $wp_customize->add_control( 'phone_number', array(
+        'label'   => __( 'Phone Number', 'my_theme' ),
+        'section' => 'contact_info_section',
+        'type'    => 'text',
+    ) );
+
+    // Add Setting for Email Address
+    $wp_customize->add_setting( 'email_address', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_email',
+    ) );
+
+    // Add Control for Email Address
+    $wp_customize->add_control( 'email_address', array(
+        'label'   => __( 'Email Address', 'my_theme' ),
+        'section' => 'contact_info_section',
+        'type'    => 'email',
+    ) );
+
+    // Add Section for Social Media Links
+    $wp_customize->add_section( 'social_media_section', array(
+        'title'    => __( 'Social Media Links', 'my_theme' ),
+        'priority' => 31,
+    ) );
+
+    // Add Setting and Control for Facebook
+    $wp_customize->add_setting( 'facebook_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+
+    $wp_customize->add_control( 'facebook_url', array(
+        'label'   => __( 'Facebook URL', 'my_theme' ),
+        'section' => 'social_media_section',
+        'type'    => 'url',
+    ) );
+
+	    // Add Setting and Control for Facebook
+		$wp_customize->add_setting( 'behance', array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_url_raw',
+		) );
+	
+		$wp_customize->add_control( 'behance', array(
+			'label'   => __( 'behance', 'my_theme' ),
+			'section' => 'social_media_section',
+			'type'    => 'url',
+		) );
+
+    // Add Setting and Control for Twitter
+    $wp_customize->add_setting( 'dribble', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+
+    $wp_customize->add_control( 'dribble', array(
+        'label'   => __( 'Ldribble', 'my_theme' ),
+        'section' => 'social_media_section',
+        'type'    => 'url',
+    ) );
+
+    // Add Setting and Control for Instagram
+    $wp_customize->add_setting( 'instagram_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+
+    $wp_customize->add_control( 'instagram_url', array(
+        'label'   => __( 'Instagram URL', 'my_theme' ),
+        'section' => 'social_media_section',
+        'type'    => 'url',
+    ) );
+}
+add_action( 'customize_register', 'my_theme_customize_register' );
