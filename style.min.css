@@ -496,3 +496,21 @@ font-style: normal;
 font-weight: 200;
 line-height: normal;
 }
+
+.pageWidth{
+    width: 100%;
+    padding: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    .pageWidth{
+        padding: 15px;
+    }
+}
+
+
+@media screen and (min-width: 1600px) {
+    .pageWidth{
+        padding: 25px 10%;
+    }
+}
