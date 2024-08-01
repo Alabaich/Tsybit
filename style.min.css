@@ -574,3 +574,10 @@ ul{
         padding: 25px 10%;
     }
 }
+
+.e-con>.e-con-inner{
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}

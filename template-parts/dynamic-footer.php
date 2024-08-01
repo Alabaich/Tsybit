@@ -94,9 +94,9 @@ $instagram_url = get_theme_mod('instagram_url', '');
             </div>
 			</div>
 			<ul class="Terms">
-				<li></li>
-				<li></li>
-				<li></li>
+				<li><a href="">terms</a></li>
+				<li><a href="">terms</a></li>
+				<li><a href="">terms</a></li>
 			</ul>
 		</div>
 	</div>

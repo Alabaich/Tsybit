@@ -21,8 +21,6 @@ while ( have_posts() ) :
 		</div>
 	<?php endif; ?>
 
-	<h1>Here</h1>
-
 	<div class="page-content">
 		<?php the_content(); ?>
 
