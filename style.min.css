@@ -598,11 +598,11 @@ ul{
 
 /* Apply the custom cursor */
 body {
-    cursor: url('../Tsybit/assets/images/Cursor.svg') 7 7, auto; /* Adjust hotspot position if needed */
+    cursor: url('../Tsybit/assets/images/Cursor.svg') 12 12, auto; /* Adjust hotspot position if needed */
 }
 
 /* Hover effect to make the circles merge */
 a:hover,
 button:hover {
-    cursor: url('../Tsybit/assets/images/Cursor\ sel.svg') 5 5, auto; /* Replace with the hover state SVG */
+    cursor: url('../Tsybit/assets/images/Cursor\ sel.svg') 12 12, auto; /* Replace with the hover state SVG */
 }
