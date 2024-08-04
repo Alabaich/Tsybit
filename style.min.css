@@ -594,3 +594,43 @@ ul{
     margin: 0 !important;
     padding: 0 !important;
 }
+
+/* Basic styles for the cursor */
+body {
+    cursor: none; /* Hide default cursor */
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px; /* Size of the inner circle */
+    height: 20px; /* Size of the inner circle */
+    border-radius: 50%;
+    background-color: #2c2d2c; /* Inner circle color */
+    border: 1px solid #2c2d2c; /* Border color */
+    pointer-events: none; /* Prevent cursor from affecting clicks */
+    transition: all 0.2s ease; /* Smooth transition */
+    transform: translate(-50%, -50%); /* Center the cursor */
+    z-index: 9999; /* Ensure cursor is on top */
+}
+
+/* Style for the outer circle with border */
+.custom-cursor::after {
+    content: '';
+    position: absolute;
+    width: 26px; /* Size of the outer circle */
+    height: 26px; /* Size of the outer circle */
+    border-radius: 50%;
+    border: 1px solid #2c2d2c; /* Border color */
+    top: -3px; /* Adjust to center it */
+    left: -3px; /* Adjust to center it */
+    z-index: -1; /* Behind the inner circle */
+}
+
+/* Hover effect to make the circles merge */
+a:hover .custom-cursor,
+button:hover .custom-cursor {
+    width: 24px; /* Merge size */
+    height: 24px; /* Merge size */
+    border-width: 2px; /* Increase border size */
+}
+

@@ -101,7 +101,21 @@ $instagram_url = get_theme_mod('instagram_url', '');
 	</div>
 </footer>
 
+
+
 <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
+});
+
 document.querySelector('.goToTop').addEventListener('click', function() {
   window.scrollTo({
     top: 0,
