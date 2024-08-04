@@ -601,8 +601,8 @@ body {
 
 .custom-cursor {
     position: fixed;
-    width: 20px; /* Size of the inner circle */
-    height: 20px; /* Size of the inner circle */
+    width: 3px; /* Size of the inner circle */
+    height: 3px; /* Size of the inner circle */
     border-radius: 50%;
     background-color: #2c2d2c; /* Inner circle color */
     border: 1px solid #2c2d2c; /* Border color */
@@ -616,8 +616,8 @@ body {
 .custom-cursor::after {
     content: '';
     position: absolute;
-    width: 26px; /* Size of the outer circle */
-    height: 26px; /* Size of the outer circle */
+    width: 7px; /* Size of the outer circle */
+    height: 7px; /* Size of the outer circle */
     border-radius: 50%;
     border: 1px solid #2c2d2c; /* Border color */
     top: -3px; /* Adjust to center it */
@@ -628,7 +628,7 @@ body {
 /* Hover effect to make the circles merge */
 a:hover .custom-cursor,
 button:hover .custom-cursor {
-    width: 24px; /* Merge size */
-    height: 24px; /* Merge size */
+    width: 3px; /* Merge size */
+    height: 3px; /* Merge size */
     border-width: 2px; /* Increase border size */
 }
