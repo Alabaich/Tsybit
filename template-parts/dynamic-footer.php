@@ -110,21 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.classList.add('custom-cursor');
     document.body.appendChild(cursor);
 
-    let lastX = 0;
-    let lastY = 0;
-
-    function updateCursorPosition() {
-        cursor.style.left = `${lastX}px`;
-        cursor.style.top = `${lastY}px`;
-        requestAnimationFrame(updateCursorPosition);
+    function updateCursorPosition(e) {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
     }
 
-    document.addEventListener('mousemove', (e) => {
-        lastX = e.pageX;
-        lastY = e.pageY;
-    });
-
-    requestAnimationFrame(updateCursorPosition);
+    document.addEventListener('mousemove', updateCursorPosition);
 });
 
 console.log("error")
