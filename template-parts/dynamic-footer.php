@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+console.log("error")
 document.querySelector('.goToTop').addEventListener('click', function() {
   window.scrollTo({
     top: 0,
