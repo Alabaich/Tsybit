@@ -594,7 +594,6 @@ ul{
     margin: 0 !important;
     padding: 0 !important;
 }
-
 /* Basic styles for the cursor */
 body {
     cursor: none; /* Hide default cursor */
@@ -608,7 +607,7 @@ body {
     background-color: #2c2d2c; /* Inner circle color */
     border: 1px solid #2c2d2c; /* Border color */
     pointer-events: none; /* Prevent cursor from affecting clicks */
-    transition: all 0.2s ease; /* Smooth transition */
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease; /* Smooth transitions */
     transform: translate(-50%, -50%); /* Center the cursor */
     z-index: 9999; /* Ensure cursor is on top */
 }
@@ -633,4 +632,3 @@ button:hover .custom-cursor {
     height: 24px; /* Merge size */
     border-width: 2px; /* Increase border size */
 }
-
