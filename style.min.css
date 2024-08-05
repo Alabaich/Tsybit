@@ -629,11 +629,13 @@ span:hover {
     .bottomHeader{
         display: none;
         position: fixed;
-        top: 50px;
+        top: 150px;
         background: #fff;
         width: 100%;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         gap: 25px;
+        height: 80vh;
     }
 }
