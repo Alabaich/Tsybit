@@ -619,7 +619,9 @@ span:hover {
 
 @media screen and (max-width: 600px) {
     .headerMobile{
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .pcHeader{
@@ -645,4 +647,10 @@ span:hover {
 
 .closeButton{
     display: none;
+}
+
+
+::selection {
+    background: black; /* Background color for selected text */
+    color: white; /* Text color for selected text */
 }
