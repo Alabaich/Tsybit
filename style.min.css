@@ -638,4 +638,10 @@ span:hover {
         gap: 25px;
         height: 80vh;
     }
+
+
+}
+
+.closeButton{
+    display: none;
 }

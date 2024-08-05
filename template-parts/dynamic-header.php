@@ -93,10 +93,14 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
 
 	let openMenu = () => {
 		menu.style.display = "flex"
+		closeM.style.display = "block"
+		openM.style.display = "none"
 	}
 
 	let closeMenu = () => {
 		menu.style.display = "none"
+		openM.style.display = "block"
+		closeM.style.display = "none"
 	}
 </script>
 <!-- <header id="site-header" class="site-header dynamic-header <?php echo esc_attr( $header_class ); ?>">
