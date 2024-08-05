@@ -501,7 +501,7 @@ header .site-navigation ul .menu-item a{
 leading-trim: both;
 text-edge: cap;
 font-family: Montserrat;
-font-size: 14px;
+font-size: 18px;
 font-style: normal;
 font-weight: 200;
 line-height: normal;
@@ -729,6 +729,12 @@ span:hover {
     footer .rightSocialNetworksTerms{
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+    }
+
+    .site-navigation ul.menu {
+        align-items: center;
+        justify-content: center;
     }
     
 }
@@ -743,5 +749,13 @@ a:hover{
 
 
 ul{
+    padding: 0;
+}
+
+footer .site-navigation ul.menu {
+    gap: 15px;
+}
+
+footer .site-navigation ul.menu a{
     padding: 0;
 }
