@@ -102,8 +102,6 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
     </div>
 </header>
 
-
-<script>
 <script>
     function toggleSearchForm(event) {
         event.preventDefault();
@@ -128,7 +126,6 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
     document.addEventListener('click', handleClickOutside);
 </script>
 
-</script>
 
 
 
