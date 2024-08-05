@@ -721,3 +721,16 @@ span:hover {
     padding: 5px 10px;
     cursor: pointer;
 }
+
+
+footer,
+footer .newsletter,
+footer .logoAndMenu,
+footer .rightSocialNetworksTerms{
+    flex-direction: column;
+    align-items: center;
+}
+
+ul{
+    padding: 0;
+}
