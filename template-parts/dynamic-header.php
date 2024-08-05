@@ -35,6 +35,7 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
     background: #F7F7F8;
     padding: 10px;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+	transition: all 300ms ease;
     opacity: 0;
     visibility: hidden;
     z-index: 1000; /* Ensure it appears above other content */
