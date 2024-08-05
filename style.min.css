@@ -632,7 +632,7 @@ span:hover {
     .bottomHeader{
         display: none;
         position: fixed;
-        top: 150px;
+        top: 120px;
         background: #fff;
         width: 100%;
         justify-content: center;
@@ -641,6 +641,13 @@ span:hover {
         gap: 25px;
         height: 80vh;
         z-index: 100;
+    }
+
+    .bottomHeader nav .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
 
