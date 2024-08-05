@@ -616,6 +616,7 @@ span:hover {
 .bottomHeader{
     display: none;
 }
+
 @media screen and (max-width: 600px) {
     .headerMobile{
         display: block;
@@ -629,8 +630,8 @@ span:hover {
         display: none;
         position: fixed;
         top: 50px;
+        background: #fff;
         width: 100%;
-        display: flex;
         justify-content: center;
         align-items: center;
         gap: 25px;
