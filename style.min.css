@@ -613,6 +613,9 @@ span:hover {
     display: none;
 }
 
+.bottomHeader{
+    display: none;
+}
 @media screen and (max-width: 600px) {
     .headerMobile{
         display: block;
