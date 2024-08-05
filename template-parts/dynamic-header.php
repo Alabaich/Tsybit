@@ -29,7 +29,6 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
 ?>
 <style>
 .search-container {
-    display: none; /* Hidden by default */
     position: absolute;
     right: -300px;
     background: #F7F7F8;
