@@ -27,52 +27,6 @@ $menu_args = [
 $header_nav_menu = wp_nav_menu( $menu_args );
 $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separate call to avoid duplicate ID attributes.
 ?>
-<style>
-.search-container {
-    position: absolute;
-    right: -300px;
-    background: #F7F7F8;
-    padding: 10px;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-	transition: all 300ms ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-.search-container.active {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-	right: 25px;
-}
-
-#searchIcon {
-    position: relative; /* Ensure the container is positioned relative for the search container to align properly */
-}
-
-.search-form {
-    display: flex;
-    align-items: center;
-	gap: 15px;
-}
-
-.search-field {
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin-right: 5px;
-}
-
-.search-submit {
-    background: #2C2D2C;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-
-</style>
 
 <header class="pageWidth pcHeader">
     <?php the_custom_logo(); ?>
