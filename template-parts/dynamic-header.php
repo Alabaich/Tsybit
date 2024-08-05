@@ -27,26 +27,84 @@ $menu_args = [
 $header_nav_menu = wp_nav_menu( $menu_args );
 $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separate call to avoid duplicate ID attributes.
 ?>
-<header class="pageWidth pcHeader">
-	<?php the_custom_logo(); ?>
-	<nav class="site-navigation <?php echo esc_attr( hello_show_or_hide( 'hello_header_menu_display' ) ); ?>" aria-label="<?php echo esc_attr__( 'Main menu', 'hello-elementor' ); ?>">
-				<?php
-				// PHPCS - escaped by WordPress with "wp_nav_menu"
-				echo $header_nav_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				?>
-			</nav>
-	<ul>
-		<li>
-			<a href="">
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  					<path d="M17.4999 17.5002L13.8808 13.881M13.8808 13.881C14.4998 13.2619 14.9909 12.527 15.3259 11.7181C15.661 10.9093 15.8334 10.0423 15.8334 9.16684C15.8334 8.29134 15.661 7.42441 15.326 6.61555C14.9909 5.80669 14.4998 5.07174 13.8808 4.45267C13.2617 3.8336 12.5267 3.34252 11.7179 3.00748C10.909 2.67244 10.0421 2.5 9.16659 2.5C8.29109 2.5 7.42416 2.67244 6.61531 3.00748C5.80645 3.34252 5.0715 3.8336 4.45243 4.45267C3.20215 5.70295 2.49976 7.39868 2.49976 9.16684C2.49976 10.935 3.20215 12.6307 4.45243 13.881C5.7027 15.1313 7.39844 15.8337 9.16659 15.8337C10.9347 15.8337 12.6305 15.1313 13.8808 13.881Z" stroke="#2C2D2C" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-			</a>
-			<a href="<?php echo esc_url(home_url('/?s=')); ?>" class="search-link">Search</a>
+<style>
+	.search-form-container {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
 
-		</li>
-	</ul>
+.search-form-container.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-field {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.search-submit {
+    background: #2C2D2C;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+</style>
+
+<header class="pageWidth pcHeader">
+    <?php the_custom_logo(); ?>
+    <nav class="site-navigation <?php echo esc_attr( hello_show_or_hide( 'hello_header_menu_display' ) ); ?>" aria-label="<?php echo esc_attr__( 'Main menu', 'hello-elementor' ); ?>">
+        <?php
+        // PHPCS - escaped by WordPress with "wp_nav_menu"
+        echo $header_nav_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        ?>
+    </nav>
+    <ul>
+        <li>
+            <a href="#" class="search-icon" onclick="toggleSearchForm(event);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M17.4999 17.5002L13.8808 13.881M13.8808 13.881C14.4998 13.2619 14.9909 12.527 15.3259 11.7181C15.661 10.9093 15.8334 10.0423 15.8334 9.16684C15.8334 8.29134 15.661 7.42441 15.326 6.61555C14.9909 5.80669 14.4998 5.07174 13.8808 4.45267C13.2617 3.8336 12.5267 3.34252 11.7179 3.00748C10.909 2.67244 10.0421 2.5 9.16659 2.5C8.29109 2.5 7.42416 2.67244 6.61531 3.00748C5.80645 3.34252 5.0715 3.8336 4.45243 4.45267C3.20215 5.70295 2.49976 7.39868 2.49976 9.16684C2.49976 10.935 3.20215 12.6307 4.45243 13.881C5.7027 15.1313 7.39844 15.8337 9.16659 15.8337C10.9347 15.8337 12.6305 15.1313 13.8808 13.881Z" stroke="#2C2D2C" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </li>
+    </ul>
+    <!-- Search Form -->
+    <div id="searchForm" class="search-form-container">
+        <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
+            <label>
+                <input type="search" class="search-field" placeholder="<?php echo esc_attr_x('Search …', 'placeholder'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+            </label>
+            <button type="submit" class="search-submit"><?php echo _x('Search', 'submit button'); ?></button>
+        </form>
+    </div>
 </header>
+
+<script>
+    function toggleSearchForm(event) {
+        event.preventDefault();
+        const searchForm = document.getElementById('searchForm');
+        searchForm.classList.toggle('show');
+    }
+</script>
+
+
 
 <header class="headerMobile">
 <?php the_custom_logo(); ?>
