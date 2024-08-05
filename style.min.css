@@ -722,14 +722,25 @@ span:hover {
     cursor: pointer;
 }
 
-
-footer,
-footer .newsletter,
-footer .logoAndMenu,
-footer .rightSocialNetworksTerms{
-    flex-direction: column;
-    align-items: center;
+@media screen and (max-width: 600px) {
+    footer,
+    footer .newsletter,
+    footer .logoAndMenu,
+    footer .rightSocialNetworksTerms{
+        flex-direction: column;
+        align-items: center;
+    }
+    
 }
+
+a{
+    color: #2c2d2c;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
 
 ul{
     padding: 0;
