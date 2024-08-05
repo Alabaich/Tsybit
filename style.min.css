@@ -607,3 +607,29 @@ button:hover,
 span:hover {
     cursor: url('../Tsybit/assets/images/Cursor\ sel.svg') 12 12, auto; /* Replace with the hover state SVG */
 }
+
+
+.headerMobile{
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .headerMobile{
+        display: block;
+    }
+
+    .pcHeader{
+        display: none;
+    }
+
+    .bottomHeader{
+        display: none;
+        position: fixed;
+        top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+}
