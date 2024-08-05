@@ -31,11 +31,9 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
 .search-container {
     display: none; /* Hidden by default */
     position: absolute;
-    top: 0;
-    right: 0;
-    background: #fff;
+    right: -300px;
+    background: #F7F7F8;
     padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease, visibility 0.3s ease;
     opacity: 0;
     visibility: hidden;
@@ -46,6 +44,7 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
     display: block;
     opacity: 1;
     visibility: visible;
+	right: 25px;
 }
 
 #searchIcon {
@@ -55,6 +54,7 @@ $header_mobile_nav_menu = wp_nav_menu( $menu_args ); // The same menu but separa
 .search-form {
     display: flex;
     align-items: center;
+	gap: 15px;
 }
 
 .search-field {
