@@ -637,6 +637,7 @@ span:hover {
         flex-direction: column;
         gap: 25px;
         height: 80vh;
+        z-index: 100;
     }
 
 
