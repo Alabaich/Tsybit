@@ -625,6 +625,7 @@ span:hover {
         justify-content: space-between;
         align-items: center;
         width: 100%;
+
     }
 
     .pcHeader{
@@ -635,7 +636,7 @@ span:hover {
         display: none;
         position: fixed;
         top: 120px;
-        background: #fff;
+        background: #F9F9F9;
         width: 100%;
         justify-content: center;
         align-items: center;
