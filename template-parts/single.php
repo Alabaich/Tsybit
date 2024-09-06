@@ -12,7 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 while ( have_posts() ) :
 	the_post();
 	?>
-<h1>HERE! SINGLE.PHP</h1>
 <main id="content" <?php post_class( 'site-main' ); ?>>
 
 	<?php if ( apply_filters( 'hello_elementor_page_title', true ) ) : ?>
