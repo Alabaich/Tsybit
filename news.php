@@ -1,7 +1,7 @@
 <?php
-/**
- * Template Name: News
- */
+/*
+Template Name: News
+*/
 
 get_header();
 
