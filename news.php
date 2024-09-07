@@ -10,7 +10,7 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
 ?>
 
 <div class="category-filter-container">
-    <h2><?php page_title(); ?></h2>
+    <h2><?php the_title(); ?></h2>
     <form id="category-filter">
         <?php
         // Get all categories
