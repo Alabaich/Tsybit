@@ -37,6 +37,7 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
     );
 
     $query = new WP_Query( $args );
+    
 
     if ( $query->have_posts() ) :
         while ( $query->have_posts() ) : $query->the_post(); ?>
