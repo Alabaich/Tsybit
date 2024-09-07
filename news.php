@@ -9,7 +9,46 @@ get_header();
 wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/category-filter.js', array( 'jquery' ), null, true );
 ?>
 
-<div class="category-filter-container">
+<style>
+    .category-filter-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .category-filter-container form{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    #category-filter input[type="checkbox"] {
+    display: none;
+}
+
+/* Style the label */
+#category-filter label {
+    display: inline-block;
+    padding: 10px 5px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px; /* Optional: spacing between labels */
+    transition: all 0.3s ease; /* Smooth transition for changes */
+}
+
+/* Change style when checkbox is checked */
+#category-filter input[type="checkbox"]:checked + label {
+    background-color: transparent;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid black;
+}
+</style>
+
+<div class="category-filter-container pageWidth">
     <h2><?php the_title(); ?></h2>
     <form id="category-filter">
         <?php
@@ -25,7 +64,7 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
     </form>
 </div>
 
-<div id="posts-container">
+<div id="posts-container" class="pageWidth">
     <?php
     // Display posts (default query)
     $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
