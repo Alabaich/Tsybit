@@ -61,7 +61,6 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
     height: 500px; /* Default height */
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
     overflow: hidden;
 }
 
