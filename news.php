@@ -10,7 +10,7 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
 ?>
 
 <div class="category-filter-container">
-    <h2>Filter by Categories</h2>
+    <h2><?php page_title(); ?></h2>
     <form id="category-filter">
         <?php
         // Get all categories
@@ -37,7 +37,7 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
     );
 
     $query = new WP_Query( $args );
-    
+
 
     if ( $query->have_posts() ) :
         while ( $query->have_posts() ) : $query->the_post(); ?>
