@@ -406,3 +406,15 @@ function filter_posts() {
 }
 add_action('wp_ajax_filter_posts', 'filter_posts'); // If logged in
 add_action('wp_ajax_nopriv_filter_posts', 'filter_posts'); // If not logged in
+
+
+function enqueue_category_filter_script() {
+    // Enqueue the category-filter.js script
+    wp_enqueue_script('category-filter', get_template_directory_uri() . '/js/category-filter.js', array('jquery'), null, true );
+
+    // Localize the script with AJAX URL
+    wp_localize_script('category-filter', 'ajax_object', array(
+        'ajax_url' => admin_url('admin-ajax.php') // Localized variable for AJAX URL
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_category_filter_script');
