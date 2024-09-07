@@ -82,7 +82,6 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
     background: rgba(0, 0, 0, 0.5); /* 50% black background */
     color: white;
     text-align: center;
-    border-radius: 0 0 10px 10px;
 }
 
 /* Style post title */
@@ -138,11 +137,11 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
 
     if ( $query->have_posts() ) :
         while ( $query->have_posts() ) : $query->the_post(); ?>
-            <div class="post-item" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>');">
+            < href="<?php the_permalink(); ?>" class="post-item" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>');">
                 <div class="post-content">
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <h2><?php the_title(); ?></h2>
                 </div>
-            </div>
+    </a>
         <?php endwhile;
 
         // WordPress built-in pagination
