@@ -102,8 +102,6 @@ while ( have_posts() ) :
       }
 
       .mainContainer .textContainer {
-        display: flex;
-        align-items: left;
         width: 100%;
       }
 
@@ -116,6 +114,12 @@ while ( have_posts() ) :
         max-width: 1200px;
         width: 100%;
       }
+
+	  @media screen and (max-width: 600px) {
+		.mainContainer {
+        padding: 15px;
+      }
+	  }
     </style>
 <main id="content" <?php post_class( 'site-main' ); ?>>
 
