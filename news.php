@@ -32,9 +32,9 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
 /* Style the label */
 #category-filter label {
     display: inline-block;
-    padding: 10px 5px;
+    padding: 5px 10px;
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     cursor: pointer;
     margin-right: 10px; /* Optional: spacing between labels */
@@ -47,6 +47,61 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
     box-shadow: none;
     border: 1px solid black;
 }
+
+/* Container for the posts */
+#posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+/* Style each post item */
+.post-item {
+    position: relative;
+    height: 500px; /* Default height */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Style for mobile */
+@media (max-width: 768px) {
+    .post-item {
+        height: 300px; /* Mobile height */
+    }
+}
+
+/* Content block at the bottom of the post item */
+.post-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5); /* 50% black background */
+    color: white;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Style post title */
+.post-content h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Ensure link styling is correct */
+.post-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.post-content a:hover {
+    text-decoration: underline;
+}
+
 
 </style>
 
@@ -83,9 +138,10 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
 
     if ( $query->have_posts() ) :
         while ( $query->have_posts() ) : $query->the_post(); ?>
-            <div class="post-item">
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <div class="post-excerpt"><?php the_excerpt(); ?></div>
+            <div class="post-item" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>');">
+                <div class="post-content">
+                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                </div>
             </div>
         <?php endwhile;
 
