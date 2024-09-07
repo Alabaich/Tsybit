@@ -24,7 +24,8 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
         gap: 15px;
     }
 
-    #category-filter input[type="checkbox"] {
+/* Hide the checkbox */
+#category-filter input[type="checkbox"] {
     display: none;
 }
 
@@ -43,9 +44,10 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
 /* Change style when checkbox is checked */
 #category-filter input[type="checkbox"]:checked + label {
     background-color: transparent;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: none;
     border: 1px solid black;
 }
+
 </style>
 
 <div class="category-filter-container pageWidth">
@@ -56,13 +58,14 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
         $categories = get_categories();
         foreach ( $categories as $category ) :
         ?>
-            <label>
-                <input type="checkbox" name="category[]" value="<?php echo esc_attr( $category->term_id ); ?>">
+            <input type="checkbox" id="category-<?php echo esc_attr( $category->term_id ); ?>" name="category[]" value="<?php echo esc_attr( $category->term_id ); ?>">
+            <label for="category-<?php echo esc_attr( $category->term_id ); ?>">
                 <?php echo esc_html( $category->name ); ?>
             </label>
         <?php endforeach; ?>
     </form>
 </div>
+
 
 <div id="posts-container" class="pageWidth">
     <?php
