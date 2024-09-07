@@ -144,9 +144,9 @@ while ( have_posts() ) :
         <img src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" alt="" />
       </div>
       <div class="textContainer">
-        <p class="textForNews">
+
           <?php the_content(); ?>
-	</p>
+
       </div>
     </div>
 
