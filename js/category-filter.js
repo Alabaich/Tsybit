@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
 
         // Make AJAX request to get filtered posts
         $.ajax({
-            url: ajaxurl, // WordPress AJAX handler
+            url: ajax_object.ajax_url, // Use localized AJAX URL
             type: 'POST',
             data: {
                 action: 'filter_posts', // The custom action hook
