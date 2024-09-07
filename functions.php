@@ -353,3 +353,56 @@ function my_theme_customize_register( $wp_customize ) {
     ) );
 }
 add_action( 'customize_register', 'my_theme_customize_register' );
+
+
+
+function enqueue_ajax_script() {
+    // Localize the ajaxurl for frontend use
+    wp_localize_script( 'category-filter', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_ajax_script' );
+
+// AJAX handler for filtering posts
+function filter_posts() {
+    // Retrieve the selected categories from the AJAX request
+    $categories = isset($_POST['categories']) ? $_POST['categories'] : array();
+
+    // Set up the arguments for the WP_Query
+    $args = array(
+        'post_type'      => 'post',
+        'posts_per_page' => 10, // Adjust per page limit if necessary
+        'paged'          => (get_query_var('paged')) ? get_query_var('paged') : 1,
+    );
+
+    // Add category filter to the query if categories are selected
+    if (!empty($categories)) {
+        $args['category__in'] = $categories;
+    }
+
+    // Query posts
+    $query = new WP_Query($args);
+
+    // Check if there are posts
+    if ($query->have_posts()) {
+        while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="post-item">
+                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <div class="post-excerpt"><?php the_excerpt(); ?></div>
+            </div>
+        <?php endwhile;
+
+        // WordPress pagination
+        the_posts_pagination( array(
+            'mid_size'  => 2,
+            'prev_text' => __( '« Previous', 'textdomain' ),
+            'next_text' => __( 'Next »', 'textdomain' ),
+        ) );
+
+    } else {
+        echo '<p>No posts found.</p>';
+    }
+
+    wp_die(); // Required to terminate the request properly
+}
+add_action('wp_ajax_filter_posts', 'filter_posts'); // If logged in
+add_action('wp_ajax_nopriv_filter_posts', 'filter_posts'); // If not logged in
