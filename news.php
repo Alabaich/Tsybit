@@ -137,7 +137,7 @@ wp_enqueue_script( 'category-filter', get_template_directory_uri() . '/js/catego
 
     if ( $query->have_posts() ) :
         while ( $query->have_posts() ) : $query->the_post(); ?>
-            < href="<?php the_permalink(); ?>" class="post-item" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>');">
+            <a href="<?php the_permalink(); ?>" class="post-item" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>');">
                 <div class="post-content">
                     <h2><?php the_title(); ?></h2>
                 </div>
