@@ -123,11 +123,11 @@ while ( have_posts() ) :
     </style>
 <main id="content" <?php post_class( 'site-main' ); ?>>
 
-	<?php if ( apply_filters( 'hello_elementor_page_title', true ) ) : ?>
+	<!-- <?php if ( apply_filters( 'hello_elementor_page_title', true ) ) : ?>
 		<div class="page-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</div>
-	<?php endif; ?>
+	<?php endif; ?> -->
 
     <div class="mainContainer">
       <div class="title heroShadowTextContainer">
@@ -155,7 +155,7 @@ while ( have_posts() ) :
     </div>
 
 	<div class="page-content">
-		<?php the_content(); ?>
+		<!-- <?php the_content(); ?> -->
 
 		<?php wp_link_pages(); ?>
 
